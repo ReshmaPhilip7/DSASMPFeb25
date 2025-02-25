@@ -15,7 +15,7 @@
 ### ImageNet 2012
 ##### 3rd golden age.Algorithm found that using a founding box we can identify objects like Child,Dog,Chair  
 ### 2024 Nobel Prize in Physics 
-##### Jeffrey Hinton won the prize for AI.
+##### Jeffrey Hinton won the prize for machine learning.
 ### Deepseek
 ##### Created by China in Jan 2025
 ## Key Deciding Factors of Growth of AI
