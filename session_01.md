@@ -29,6 +29,6 @@
 ## Data Science Application Domains
 ##### Healthcare, E-commerce.Banking.Finance,Manufacturing
 ## Correlation Vs. Causation
-##### Correlation can be obtained from some studies but not causation.Correlation means that A is one factor which affects B but not the only factor(causation).
+##### Correlation can be obtained from some studies but not causation.Correlation means that A is one factor which affects/causes B but not the only factor(causation).
 ## Ethics in AI
 ##### Privacy,Accountability,Safety,Transparency,Respect for human value,Fairness
