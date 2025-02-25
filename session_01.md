@@ -10,6 +10,7 @@ World is working to reach that goal.
 ### Backpropagation
 ####Uses many perceptrons to solve complex problems including XOR gate.
 ### AI Winter
+####AI winter is a quiet period for artificial intelligence (AI) research and development. Over the years, funding for AI initiatives has gone through a number of active and inactive cycles. The label winter is used to describe dormant periods when customer interest in AI declines.
 ### DARPA Grand Challenge 2005
 ####A car known as Standley from Standford University lead by Prof. Sebastian won the match. The match was to check which car moved from point A to B having obstacles without a driver.They used many sensors , not only GPS.
 ### ImageNet 2012
