@@ -19,7 +19,7 @@
 ### Deepseek
 ##### Created by China in Jan 2025
 ## Key Deciding Factors of Growth of AI
-##### Explosion of data and its generation with digital devices
+##### Explosion of data and its generation with digital devices(My Note-CAD)
 ##### Advancements in computing power
 ##### Algorithmic improvements
 ## Data Science, Machine Learning and Artificial Intelligence
@@ -31,4 +31,4 @@
 ## Correlation Vs. Causation
 ##### Correlation can be obtained from some studies but not causation.Correlation means that A is one factor which affects/causes B but not the only factor(causation).
 ## Ethics in AI
-##### Privacy,Accountability,Safety,Transparency,Respect for human value,Fairness
+##### Privacy,Accountability,Safety,Transparency,Respect for human value,Fairness(My notes-PASTRF)
