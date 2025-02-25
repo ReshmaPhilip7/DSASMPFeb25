@@ -7,7 +7,7 @@
 ### Perceptron
 ##### It is equivalent to one neuron which has dendrites ,axons and neurons. It could solve AND and OR gate logic but not XOR gate.
 ### Backpropagation
-##### Uses many perceptrons to solve complex problems including XOR gate.
+##### Uses many perceptrons to solve complex problems including XOR gate.Uses chain rule and differentiation
 ### AI Winter
 ##### AI winter is a quiet period for artificial intelligence (AI) research and development. Over the years, funding for AI initiatives has gone through a number of active and inactive cycles. The label winter is used to describe dormant periods when customer interest in AI declines.
 ### DARPA Grand Challenge 2005
@@ -19,16 +19,16 @@
 ### Deepseek
 ##### Created by China in Jan 2025
 ## Key Deciding Factors of Growth of AI
-#####Explosion of data and its generation with digital devices
-#####Advancements in computing power
-#####Algorithmic improvements
+##### Explosion of data and its generation with digital devices
+##### Advancements in computing power
+##### Algorithmic improvements
 ## Data Science, Machine Learning and Artificial Intelligence
-#####AI - creating smart machines to mimic human behaviour
-#####ML-Subset of AI, builds model based on training data to make predictions
-#####Data science - subset of AI,area of statistics , scientific method to extract insights
+##### AI - creating smart machines to mimic human behaviour
+##### ML-Subset of AI, builds model based on training data to make predictions
+##### Data science - subset of AI,area of statistics , scientific method to extract insights
 ## Data Science Application Domains
-#####Healthcare, E-commerce.Banking.Finance,Manufacturing
+##### Healthcare, E-commerce.Banking.Finance,Manufacturing
 ## Correlation Vs. Causation
-#####Correlation can be obtained from some studies but not causation.Correlation means that A is one factor which affects B but not the only factor(causation).
+##### Correlation can be obtained from some studies but not causation.Correlation means that A is one factor which affects B but not the only factor(causation).
 ## Ethics in AI
-#####Privacy,Accountability,Safety,Transparency,Respect for human value,Fairness
+##### Privacy,Accountability,Safety,Transparency,Respect for human value,Fairness
