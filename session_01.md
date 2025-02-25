@@ -13,7 +13,7 @@
 ### DARPA Grand Challenge 2005
 ##### A car known as Standley from Standford University lead by Prof. Sebastian won the match. The match was to check which car moved from point A to B having obstacles without a driver.They used many sensors , not only GPS.
 ### ImageNet 2012
-##### 3rd golden age.Algorithm found that uisng a founding box we can identify objects like Child,Dog,Chair  
+##### 3rd golden age.Algorithm found that using a founding box we can identify objects like Child,Dog,Chair  
 ### 2024 Nobel Prize in Physics 
 ##### Jeffrey Hinton won the prize for AI.
 ### Deepseek
