@@ -1,6 +1,6 @@
 # Demystifying Terms Data Science, Machine Learning, Artificial Intelligence
 ## Artificial Intelligence
-###creating systems that mimic human intelligence.One system has to pass turing test to become equal to human intelligence but no system has passed it yet.
+###creating systems that mimic human intelligence or behaviour.One system has to pass turing test to become equal to human intelligence but no system has passed it yet.
 World is working to reach that goal.
 ## Artificial General Intelligence
 ## History of Artificial Intelligence
@@ -13,6 +13,7 @@ World is working to reach that goal.
 ### DARPA Grand Challenge 2005
 ####A car known as Standley from Standford University lead by Prof. Sebastian won the match. The match was to check which car moved from point A to B having obstacles without a driver.They used many sensors , not only GPS.
 ### ImageNet 2012
+####3rd golden age.Algorithm found that uisng a foudnign box we cna identify objects like Child,Dog,Chair  
 ### 2024 Nobel Prize in Physics 
 ####Jeffrey Hinton won the prize for AI.
 ### Deepseek
