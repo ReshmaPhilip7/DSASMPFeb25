@@ -1,7 +1,6 @@
 # Demystifying Terms Data Science, Machine Learning, Artificial Intelligence
 ## Artificial Intelligence
-#### creating systems that mimic human intelligence or behaviour.One system has to pass turing test to become equal to human intelligence but no system has passed it yet.
-World is working to reach that goal.
+#### creating systems that mimic human intelligence or behaviour.One system has to pass turing test to become equal to human intelligence but no system has passed it yet. World is working to reach that goal.
 ## Artificial General Intelligence
 ## History of Artificial Intelligence
 ###Started with perceptron
