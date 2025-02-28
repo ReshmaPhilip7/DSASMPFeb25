@@ -1,4 +1,4 @@
-
+Write code to check whether a given string is panlindrome or not==>HW
 https://git-scm.com/downloads/win
 https://code.visualstudio.com/docs/?dv=win64user
 https://www.python.org/downloads/
