@@ -1,3 +1,4 @@
+https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 Write code to check whether a given string is panlindrome or not==>HW
 https://git-scm.com/downloads/win
 https://code.visualstudio.com/docs/?dv=win64user
