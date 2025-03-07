@@ -5,6 +5,17 @@ https://code.visualstudio.com/docs/?dv=win64user
 https://www.python.org/downloads/
 https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 
+x = [2,4,7,8,9,2,8,2]
+print(x)
+y=sorted(x)
+print(y)
+z=len(x)
+print(z)
+if(z%2 == 1):
+    m=y[int((z+1)/2)-1]
+else:
+    m=y[((int(z)/2)-((int(z)/2)+1))/2]
+print(m)
 
 # Walkthroughs
 1. [Google Colab](https://colab.research.google.com/)
