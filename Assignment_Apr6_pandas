@@ -1,0 +1,25 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv(r"C:/Users/ACER/Downloads/auto-mpg.csv")
+print(df)
+print(df.head(10))
+print(df.shape)
+print(df.describe())
+df1 = df[(df["model year"] == 75) & (df["weight"] < 3000)]
+print(df1[["car name", "weight", "mpg"]])
+
+df2 = df[df["horsepower"] == "?"]
+print(df2)
+missing_values = df.isnull().sum()
+print(missing_values)
+question_mark = (df == "?").any()
+print(question_mark)
+df.replace("?", 0, inplace=True)
+print(df)
+median_horsepower = df["horsepower"].median()
+print(median_horsepower)
+df.replace(0, median_horsepower, inplace=True)
+print(df)
+missing_values = df.isnull().sum()
+print(missing_values)
