@@ -1,13 +1,16 @@
-import pandas as pd
+ import pandas as pd
+
 
 df = pd.read_csv(r"C:/Users/ACER/Downloads/auto-mpg.csv")
 print(df)
+# Question1
 print(df.head(10))
 print(df.shape)
 print(df.describe())
+# Question2
 df1 = df[(df["model year"] == 75) & (df["weight"] < 3000)]
 print(df1[["car name", "weight", "mpg"]])
-
+# Question3
 df2 = df[df["horsepower"] == "?"]
 print(df2)
 missing_values = df.isnull().sum()
@@ -20,13 +23,14 @@ median_horsepower = df["horsepower"].median()
 print(median_horsepower)
 df.replace(0, median_horsepower, inplace=True)
 print(df)
+# Question5
 missing_values = df.isnull().sum()
 print(missing_values)
 df["horsepower"] = df["horsepower"].astype(int)
 df["weight"] = df["weight"].astype(int)
 df["power_to_weight_ratio"] = df["horsepower"] / df["weight"]
 print(df)
-
+# Question6
 df_sorted_origin_mpg_mean = df.groupby("origin")["mpg"].mean()
 print(df_sorted_origin_mpg_mean)
 
@@ -34,20 +38,21 @@ df_car_names = df.sort_values(by="mpg", ascending=False).head(10)
 print(df_car_names[["car name", "mpg"]])
 
 
+# Question7
 def performance_score(row):
     return row["mpg"] * row["acceleration"] / row["weight"]
 
 
 df["performance_score"] = df.apply(performance_score, axis=1)
 print(df)
-
+# Question8
 summary_df = df.groupby("model year")[["mpg", "weight", "horsepower"]].mean()
 print(summary_df)
-
+# Question9
 df3 = df[df["mpg"] > 30][["mpg", "cylinders", "horsepower", "weight"]]
 print(df3)
 df3.to_csv("high_mpg_cars.csv", index=False)
-
+# Question10
 Q1 = df["mpg"].quantile(0.25)
 Q3 = df["mpg"].quantile(0.75)
 IQR = Q3 - Q1
@@ -61,3 +66,217 @@ outliers = df[(df["mpg"] < lower_bound) & (df["mpg"] > upper_bound)][
     ["car name", "mpg", "model year"]
 ]
 print(outliers)
+
+#Answer1
+
+
+      mpg  cylinders  displacement horsepower  weight  acceleration  model year  origin                   car name
+0    18.0          8         307.0        130    3504          12.0          70       1  chevrolet chevelle malibu
+1    15.0          8         350.0        165    3693          11.5          70       1          buick skylark 320
+2    18.0          8         318.0        150    3436          11.0          70       1         plymouth satellite
+3    16.0          8         304.0        150    3433          12.0          70       1              amc rebel sst
+4    17.0          8         302.0        140    3449          10.5          70       1                ford torino
+..    ...        ...           ...        ...     ...           ...         ...     ...                        ...
+393  27.0          4         140.0         86    2790          15.6          82       1            ford mustang gl
+394  44.0          4          97.0         52    2130          24.6          82       2                  vw pickup
+395  32.0          4         135.0         84    2295          11.6          82       1              dodge rampage
+396  28.0          4         120.0         79    2625          18.6          82       1                ford ranger
+397  31.0          4         119.0         82    2720          19.4          82       1                 chevy s-10
+
+[398 rows x 9 columns]
+    mpg  cylinders  displacement horsepower  weight  acceleration  model year  origin                   car name
+0  18.0          8         307.0        130    3504          12.0          70       1  chevrolet chevelle malibu
+1  15.0          8         350.0        165    3693          11.5          70       1          buick skylark 320
+2  18.0          8         318.0        150    3436          11.0          70       1         plymouth satellite
+3  16.0          8         304.0        150    3433          12.0          70       1              amc rebel sst
+4  17.0          8         302.0        140    3449          10.5          70       1                ford torino
+5  15.0          8         429.0        198    4341          10.0          70       1           ford galaxie 500
+6  14.0          8         454.0        220    4354           9.0          70       1           chevrolet impala
+7  14.0          8         440.0        215    4312           8.5          70       1          plymouth fury iii
+8  14.0          8         455.0        225    4425          10.0          70       1           pontiac catalina
+9  15.0          8         390.0        190    3850           8.5          70       1         amc ambassador dpl
+(398, 9)
+              mpg   cylinders  displacement       weight  acceleration  model year      origin
+count  398.000000  398.000000    398.000000   398.000000    398.000000  398.000000  398.000000
+mean    23.514573    5.454774    193.425879  2970.424623     15.568090   76.010050    1.572864
+std      7.815984    1.701004    104.269838   846.841774      2.757689    3.697627    0.802055
+min      9.000000    3.000000     68.000000  1613.000000      8.000000   70.000000    1.000000
+25%     17.500000    4.000000    104.250000  2223.750000     13.825000   73.000000    1.000000
+50%     23.000000    4.000000    148.500000  2803.500000     15.500000   76.000000    1.000000
+75%     29.000000    8.000000    262.000000  3608.000000     17.175000   79.000000    2.000000
+max     46.600000    8.000000    455.000000  5140.000000     24.800000   82.000000    3.000000
+
+#Answer2
+              car name  weight   mpg
+167     toyota corolla    2171  29.0
+168         ford pinto    2639  23.0
+169        amc gremlin    2914  20.0
+170      pontiac astro    2592  23.0
+171      toyota corona    2702  24.0
+172  volkswagen dasher    2223  25.0
+173         datsun 710    2545  24.0
+174         ford pinto    2984  18.0
+175  volkswagen rabbit    1937  29.0
+177         audi 100ls    2694  23.0
+178        peugeot 504    2957  23.0
+179        volvo 244dl    2945  22.0
+180          saab 99le    2671  25.0
+181   honda civic cvcc    1795  33.0
+#Answer3
+      mpg  cylinders  displacement horsepower  weight  acceleration  model year  origin              car name
+32   25.0          4          98.0          ?    2046          19.0          71       1            ford pinto
+126  21.0          6         200.0          ?    2875          17.0          74       1         ford maverick
+330  40.9          4          85.0          ?    1835          17.3          80       2  renault lecar deluxe
+336  23.6          4         140.0          ?    2905          14.3          80       1    ford mustang cobra
+354  34.5          4         100.0          ?    2320          15.8          81       2           renault 18i
+374  23.0          4         151.0          ?    3035          20.5          82       1        amc concord dl
+mpg             0
+cylinders       0
+displacement    0
+horsepower      0
+weight          0
+acceleration    0
+model year      0
+origin          0
+car name        0
+dtype: int64
+mpg             False
+cylinders       False
+displacement    False
+horsepower       True
+weight          False
+acceleration    False
+model year      False
+origin          False
+car name        False
+dtype: bool
+      mpg  cylinders  displacement horsepower  weight  acceleration  model year  origin                   car name
+0    18.0          8         307.0        130    3504          12.0          70       1  chevrolet chevelle malibu
+1    15.0          8         350.0        165    3693          11.5          70       1          buick skylark 320
+2    18.0          8         318.0        150    3436          11.0          70       1         plymouth satellite
+3    16.0          8         304.0        150    3433          12.0          70       1              amc rebel sst
+4    17.0          8         302.0        140    3449          10.5          70       1                ford torino
+..    ...        ...           ...        ...     ...           ...         ...     ...                        ...
+393  27.0          4         140.0         86    2790          15.6          82       1            ford mustang gl
+394  44.0          4          97.0         52    2130          24.6          82       2                  vw pickup
+395  32.0          4         135.0         84    2295          11.6          82       1              dodge rampage
+396  28.0          4         120.0         79    2625          18.6          82       1                ford ranger
+397  31.0          4         119.0         82    2720          19.4          82       1                 chevy s-10
+
+[398 rows x 9 columns]
+92.0
+      mpg  cylinders  displacement horsepower  weight  acceleration  model year  origin                   car name
+0    18.0          8         307.0        130    3504          12.0          70       1  chevrolet chevelle malibu
+1    15.0          8         350.0        165    3693          11.5          70       1          buick skylark 320
+2    18.0          8         318.0        150    3436          11.0          70       1         plymouth satellite
+3    16.0          8         304.0        150    3433          12.0          70       1              amc rebel sst
+4    17.0          8         302.0        140    3449          10.5          70       1                ford torino
+..    ...        ...           ...        ...     ...           ...         ...     ...                        ...
+393  27.0          4         140.0         86    2790          15.6          82       1            ford mustang gl
+394  44.0          4          97.0         52    2130          24.6          82       2                  vw pickup
+395  32.0          4         135.0         84    2295          11.6          82       1              dodge rampage
+396  28.0          4         120.0         79    2625          18.6          82       1                ford ranger
+397  31.0          4         119.0         82    2720          19.4          82       1                 chevy s-10
+
+[398 rows x 9 columns]
+mpg             0
+cylinders       0
+displacement    0
+horsepower      0
+weight          0
+acceleration    0
+model year      0
+origin          0
+car name        0
+dtype: int64
+#Answer4
+      mpg  cylinders  displacement  horsepower  weight  acceleration  model year  origin                   car name  power_to_weight_ratio       
+0    18.0          8         307.0         130    3504          12.0          70       1  chevrolet chevelle malibu               0.037100       
+1    15.0          8         350.0         165    3693          11.5          70       1          buick skylark 320               0.044679       
+2    18.0          8         318.0         150    3436          11.0          70       1         plymouth satellite               0.043655       
+3    16.0          8         304.0         150    3433          12.0          70       1              amc rebel sst               0.043694       
+4    17.0          8         302.0         140    3449          10.5          70       1                ford torino               0.040591       
+..    ...        ...           ...         ...     ...           ...         ...     ...                        ...                    ...       
+393  27.0          4         140.0          86    2790          15.6          82       1            ford mustang gl               0.030824       
+394  44.0          4          97.0          52    2130          24.6          82       2                  vw pickup               0.024413       
+395  32.0          4         135.0          84    2295          11.6          82       1              dodge rampage               0.036601       
+396  28.0          4         120.0          79    2625          18.6          82       1                ford ranger               0.030095       
+397  31.0          4         119.0          82    2720          19.4          82       1                 chevy s-10               0.030147       
+
+[398 rows x 10 columns]
+#Answer5
+origin
+1    20.083534
+2    27.891429
+3    30.450633
+Name: mpg, dtype: float64
+#Answer6
+                            car name   mpg
+322                        mazda glc  46.6
+329              honda civic 1500 gl  44.6
+325             vw rabbit c (diesel)  44.3
+394                        vw pickup  44.0
+326               vw dasher (diesel)  43.4
+244  volkswagen rabbit custom diesel  43.1
+309                        vw rabbit  41.5
+330             renault lecar deluxe  40.9
+324                       datsun 210  40.8
+247                   datsun b210 gx  39.4
+
+#Answer7
+      mpg  cylinders  displacement  horsepower  weight  ...  model year  origin                   car name power_to_weight_ratio  performance_score
+0    18.0          8         307.0         130    3504  ...          70       1  chevrolet chevelle malibu              0.037100           0.061644
+1    15.0          8         350.0         165    3693  ...          70       1          buick skylark 320              0.044679           0.046710
+2    18.0          8         318.0         150    3436  ...          70       1         plymouth satellite              0.043655           0.057625
+3    16.0          8         304.0         150    3433  ...          70       1              amc rebel sst              0.043694           0.055928
+4    17.0          8         302.0         140    3449  ...          70       1                ford torino              0.040591           0.051754
+..    ...        ...           ...         ...     ...  ...         ...     ...                        ...                   ...                ...
+393  27.0          4         140.0          86    2790  ...          82       1            ford mustang gl              0.030824           0.150968
+394  44.0          4          97.0          52    2130  ...          82       2                  vw pickup              0.024413           0.508169
+395  32.0          4         135.0          84    2295  ...          82       1              dodge rampage              0.036601           0.161743
+396  28.0          4         120.0          79    2625  ...          82       1                ford ranger              0.030095           0.198400
+397  31.0          4         119.0          82    2720  ...          82       1                 chevy s-10              0.030147           0.221103
+
+[398 rows x 11 columns]
+
+#Answer8
+                  mpg       weight  horsepower
+model year
+70          17.689655  3372.793103  147.827586
+71          21.250000  2995.428571  106.500000
+72          18.714286  3237.714286  120.178571
+73          17.100000  3419.025000  130.475000
+74          22.703704  2877.925926   94.148148
+75          20.266667  3176.800000  101.066667
+76          21.573529  3078.735294  101.117647
+77          23.375000  2997.357143  105.071429
+78          24.061111  2861.805556   99.694444
+79          25.093103  3055.344828  101.206897
+80          33.696552  2436.655172   78.482759
+81          30.334483  2522.931034   81.413793
+82          31.709677  2453.548387   81.806452
+
+#Answer9
+      mpg  cylinders  horsepower  weight
+53   31.0          4          65    1773
+54   35.0          4          69    1613
+129  31.0          4          67    1950
+131  32.0          4          65    1836
+144  31.0          4          52    1649
+..    ...        ...         ...     ...
+390  32.0          4          96    2665
+391  36.0          4          84    2370
+394  44.0          4          52    2130
+395  32.0          4          84    2295
+397  31.0          4          82    2720
+
+[85 rows x 4 columns]
+
+#Answer10
+0.25
+46.25
+11.5
+Empty DataFrame
+Columns: [car name, mpg, model year]
+Index: []
+PS C:\Users\ACER\OneDrive\Documents\Python_ProjectFolder> 
