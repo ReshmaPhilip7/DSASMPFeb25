@@ -8,16 +8,19 @@ data = np.genfromtxt(
     encoding=None,
 )
 print(data)
+# Question1
 arr1 = data["mpg"]
 print("Mean :", np.mean(arr1))
 print("Median :", np.median(arr1))
 print("Standard Deviation :", np.std(arr1))
 cars_above_25 = np.sum(arr1 > 25)
 print("No of cars with mpg > 25 :", cars_above_25)
+# Question2
 arr2 = data[data["cylinders"] > 6]
 print(arr2)
 print(arr2.dtype.names)
 print("Cars with more than 6 cylinders:", arr2["car_name"].tolist())
+# Question3
 arr3 = data["weight"]
 percentile_25 = np.percentile(arr3, [25])
 print("25th percentile:", percentile_25)
@@ -25,11 +28,12 @@ percentile_50 = np.percentile(arr3, [50])
 print("50th percentile:", percentile_50)
 percentile_75 = np.percentile(arr3, [75])
 print("75th percentile:", percentile_75)
+# Question4
 arr4 = data["acceleration"]
 print(arr4.size)
 acc_normalized = (arr4 - np.min(arr4)) / (np.max(arr4) - np.min(arr4))
 print(acc_normalized)
-
+# Question5
 arr5 = data["horsepower"]
 arr5 = np.where(arr5 == "?", "0", arr5)
 print(arr5)
@@ -41,11 +45,12 @@ arr5_int = np.where(arr5_int == 0, arr5_int_mean, arr5_int)
 print(arr5_int)
 arr5_final = arr5_int + 0.1
 print(arr5_final)
+# Question6
 df3 = data[data["origin"] == 2]
 print(df3)
 arr_displacement_mean = df3["displacement"].mean()
 print(arr_displacement_mean)
-
+# Question7
 arr6 = data["mpg"].astype(int)
 arr8 = data["weight"].astype(int)
 arr9 = np.column_stack((arr6, arr5_int, arr8))
@@ -56,7 +61,7 @@ print(np.shape(arr10))
 dot_product = np.dot(arr9, arr10)
 print(dot_product)
 print(np.shape(dot_product))
-
+# Question8
 
 model_year_arr = data["model_year"]
 print(model_year_arr)
@@ -67,7 +72,7 @@ print(sorted_indices)
 sorted_car_names = car_names_arr[sorted_indices]
 print(sorted_car_names[:5])
 
-
+# Question9
 print(arr6)
 print(arr8)
 correlation_matrix = np.corrcoef(arr6, arr8)
@@ -75,7 +80,7 @@ pearson_correlation_coefficient = correlation_matrix[0, 1]
 print(correlation_matrix)
 print(pearson_correlation_coefficient)
 
-
+# Question10
 arr12 = data["cylinders"]
 unique_cylinders = np.unique(arr12)
 print(unique_cylinders)
